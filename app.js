@@ -35,4 +35,4 @@ let deferred;
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;$('#install').hidden=false;});
 $('#install').addEventListener('click',async()=>{if(!deferred)return;deferred.prompt();await deferred.userChoice;deferred=null;$('#install').hidden=true;});
 window.addEventListener('error',e=>{if(!content)return;content.innerHTML='<p class="empty">S’ha produït un error de càrrega. Torna a carregar l’aplicació.</p>';console.error(e.error||e.message);});
-if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js?v=3').catch(()=>{});
+if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js?v=4').catch(()=>{});
